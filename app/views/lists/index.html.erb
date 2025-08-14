@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Batch 2064 Watchlist</h1>
+  </div>
+</div>
+
+<div class="container py-3">
+  <div class="d-flex justify-content-between">
+    <h3>You have <%= @lists.count %> lists :</h3>
+    <%= link_to "+ Add new list", new_list_path, class: "btn btn-success"  %>
+  </div>
+  <div class="row my-3">
+    <% @lists.each do |list| %>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+        <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
